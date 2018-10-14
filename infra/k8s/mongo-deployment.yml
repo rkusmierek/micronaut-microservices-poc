@@ -19,3 +19,17 @@ spec:
         image: mongo
         ports:
         - containerPort: 27017
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 27017
+          initialDelaySeconds: 1
+          timeoutSeconds: 1
+          periodSeconds: 1
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 27017
+          initialDelaySeconds: 60
+          timeoutSeconds: 1
+          periodSeconds: 5

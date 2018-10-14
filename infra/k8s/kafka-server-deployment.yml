@@ -26,3 +26,15 @@ spec:
         ports:
         - containerPort: 2181
         - containerPort: 9092
+        readinessProbe:
+          tcpSocket:
+            port: 9092
+          initialDelaySeconds: 1
+          timeoutSeconds: 1
+          periodSeconds: 1
+        livenessProbe:
+          tcpSocket:
+            port: 9092
+          initialDelaySeconds: 60
+          timeoutSeconds: 1
+          periodSeconds: 5
