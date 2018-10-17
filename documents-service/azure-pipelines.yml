@@ -8,6 +8,9 @@ variables:
 steps:
 - script: docker login -u $(dockerId) -p $(dockerPass)
   displayName: "docker login"
+- script: ./build-api.sh
+  workingDirectory: scripts
+  displayName: 'build commons'
 - script: ./build.sh
   workingDirectory: $(app)
   displayName: 'docker build $(app)'
