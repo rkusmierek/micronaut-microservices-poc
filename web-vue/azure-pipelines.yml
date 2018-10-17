@@ -5,14 +5,14 @@ variables:
   tag: '$(build.buildId)'
 
 steps:
-- script: docker login -u $(dockerId) -p $(dockerPass)
-  displayName: "docker login"
-- script: ./build.sh
+- displayName: 'docker login'
+  script: docker login -u $(dockerId) -p $(dockerPass)
+- displayName: 'docker build web-vue'
+  script: ./build.sh
   workingDirectory: web-vue
-  displayName: 'docker build web-vue'
-- script: docker tag $(dockerNamespace)/web-vue $(dockerNamespace)/web-vue:$(tag)
-  displayName: 'docker tag $(dockerNamespace)/web-vue:$(tag)'
-- script: docker push $(dockerNamespace)/web-vue:$(tag)
-  displayName: 'docker push $(dockerNamespace)/web-vue:$(tag)'
-- script: docker push $(dockerNamespace)/web-vue:latest
-  displayName: 'docker push $(dockerNamespace)/web-vue:latest'
+- displayName: 'docker tag $(dockerNamespace)/web-vue:$(tag)'
+  script: docker tag $(dockerNamespace)/web-vue $(dockerNamespace)/web-vue:$(tag)
+- displayName: 'docker push $(dockerNamespace)/web-vue:$(tag)'
+  script: docker push $(dockerNamespace)/web-vue:$(tag)
+- displayName: 'docker push $(dockerNamespace)/web-vue:latest'
+  script: docker push $(dockerNamespace)/web-vue:latest
