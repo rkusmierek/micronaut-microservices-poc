@@ -2,7 +2,7 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 variables:
-  app: 'agent-portal-gateway'
+  app: 'payment-service'
   tag: '$(build.buildId)'
 
 steps:
