@@ -11,8 +11,8 @@ steps:
   workingDirectory: web-vue
   displayName: 'docker build web-vue'
 - script: docker tag $(dockerNamespace)/web-vue $(dockerNamespace)/web-vue:$(tag)
-  displayName: 'docker tag $(dockerNamespace)/web-vue:$(tag)'
+  displayName: 'docker tag $(dockerNamespace)/web-vue:$(build.buildId)'
 - script: docker push $(dockerNamespace)/web-vue:$(tag)
-  displayName: 'docker push $(dockerNamespace)/web-vue:$(tag)'
+  displayName: 'docker push $(dockerNamespace)/web-vue:$(build.buildId)'
 - script: docker push $(dockerNamespace)/web-vue:latest
   displayName: 'docker push $(dockerNamespace)/web-vue:latest'
