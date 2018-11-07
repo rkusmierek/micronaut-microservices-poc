@@ -33,6 +33,7 @@
     </dependencyManagement>
 
     <dependencies>
+
         <!-- LOMBOK -->
         <dependency>
             <groupId>org.projectlombok</groupId>
