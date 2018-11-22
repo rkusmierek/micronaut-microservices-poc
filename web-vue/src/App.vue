@@ -20,7 +20,7 @@
 
         <footer>
             <img src="./assets/logo_horizontal.png" alt="Logo Footer"/>
-            <p><a href="https://asc.altkom.pl">Altkom Software & Consulting LAB @ 2018</a></p>
+            <p><a href="https://asc.altkom.pl">Altkom Software & Consulting LAB @ 2018</a> (build: 20181122)</p>
         </footer>
     </div>
 </template>
