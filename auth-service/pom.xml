@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>pl.altkom.asc.lab.micronaut.poc</groupId>
     <artifactId>auth-service</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
 
     <properties>
         <exec.mainClass>pl.altkom.asc.lab.micronaut.poc.auth.AuthApplication</exec.mainClass>
