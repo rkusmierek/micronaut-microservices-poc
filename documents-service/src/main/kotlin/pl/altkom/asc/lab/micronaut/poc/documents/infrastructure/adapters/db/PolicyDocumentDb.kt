@@ -1,6 +1,6 @@
-package pl.altkom.asc.lab.micronaut.poc.documents.infrastructure.db
+package pl.altkom.asc.lab.micronaut.poc.documents.infrastructure.adapters.db
 
-import pl.altkom.asc.lab.micronaut.poc.documents.annotations.RequiresJdbc
+import pl.altkom.asc.lab.micronaut.poc.documents.infrastructure.annotations.RequiresJdbc
 import pl.altkom.asc.lab.micronaut.poc.documents.domain.PolicyDocument
 import pl.altkom.asc.lab.micronaut.poc.documents.domain.PolicyDocumentRepository
 import io.micronaut.configuration.hibernate.jpa.scope.CurrentSession
@@ -11,7 +11,7 @@ import kotlin.streams.toList
 
 @Singleton
 @RequiresJdbc
-open class PolicyDocymentDb(
+open class PolicyDocumentDb(
         @CurrentSession
         private val entityManager: EntityManager
 ) : PolicyDocumentRepository {
